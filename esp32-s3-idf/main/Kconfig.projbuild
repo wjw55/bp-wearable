@@ -1,0 +1,45 @@
+menu "CDE3301 Cuffless BP Monitor"
+
+config BP_WIFI_SSID
+    string "Wi-Fi SSID"
+    default "YOUR_WIFI_SSID"
+
+config BP_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default "YOUR_WIFI_PASSWORD"
+
+config BP_SERVER_URL
+    string "Backend HTTP endpoint"
+    default "http://192.168.1.100:3001/api/heartrate"
+
+config BP_I2C_SDA_GPIO
+    int "MAX30102 SDA GPIO"
+    range 0 48
+    default 8
+
+config BP_I2C_SCL_GPIO
+    int "MAX30102 SCL GPIO"
+    range 0 48
+    default 9
+
+config BP_SAMPLE_QUEUE_LEN
+    int "PPG sample queue length"
+    range 8 256
+    default 64
+
+config BP_POST_INTERVAL_MS
+    int "Telemetry post interval in milliseconds"
+    range 250 10000
+    default 2000
+
+config BP_DEFAULT_CAL_SBP
+    int "Default calibration systolic BP"
+    range 70 220
+    default 120
+
+config BP_DEFAULT_CAL_DBP
+    int "Default calibration diastolic BP"
+    range 40 140
+    default 80
+
+endmenu

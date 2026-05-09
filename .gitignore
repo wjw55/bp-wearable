@@ -1,0 +1,18 @@
+node_modules/
+dist/
+build/
+.env
+.env.*
+*.local
+
+# ESP-IDF generated files
+sdkconfig
+sdkconfig.old
+managed_components/
+dependencies.lock
+
+# Logs and OS/editor files
+*.log
+.DS_Store
+Thumbs.db
+**/.vscode/settings.json
