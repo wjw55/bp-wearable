@@ -15,6 +15,10 @@ const MAX_HISTORY = 60;
 let history = [];
 let latestReading = null;
 
+app.get('/health', (req, res) => {
+  res.json({ ok: true, service: 'bp-wearable-backend' });
+});
+
 // Broadcast to all connected WebSocket clients
 function broadcast(data) {
   const msg = JSON.stringify(data);
@@ -56,5 +60,5 @@ wss.on('connection', ws => {
   }
 });
 
-server.listen(3001, () => console.log('Server running on :3001'));
+server.listen(3001, '0.0.0.0', () => console.log('Server running on 0.0.0.0:3001'));
 
